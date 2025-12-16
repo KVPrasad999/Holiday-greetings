@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,217 +7,121 @@
 
 <title>Cognizant → US Bank | Holiday Greeting</title>
 <style>
-
     body {
-
         margin: 0;
-
         font-family: 'Arial', sans-serif;
-
         background: linear-gradient(135deg, #001a33, #003d80, #0059c0);
-
         color: #ffffff;
-
         text-align: center;
-
         padding: 40px 20px;
-
         overflow-x: hidden;
-
     }
 
     h1 {
-
         font-size: 32px;
-
         margin-bottom: 10px;
-
         letter-spacing: 1px;
-
     }
 
     h2 {
-
         font-weight: normal;
-
         margin-top: 0;
-
         color: #cde8ff;
-
     }
 
     .card {
-
         background: rgba(255, 255, 255, 0.15);
-
         padding: 35px;
-
         border-radius: 18px;
-
         max-width: 550px;
-
         margin: 40px auto;
-
         backdrop-filter: blur(10px);
-
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-	
-
     }
 
-    .reveal-btn {
-
-        background: #a18cd1;
-
-        border: none;
-
-        padding: 15px 30px;
-
-        font-size: 18px;
-
-        border-radius: 12px;
-
-        cursor: pointer;
-
-        color: #001a33;
-
-        font-weight: bold;
-
-        margin-top: 22px;
-
-        transition: 0.3s;
-
-    }
-
-    .reveal-btn:hover {
-
-        background: #66ddff;
-
-        transform: scale(1.05);
-
-    }
-
+    /* Remove hidden behavior and keep the reveal animation style */
     .section {
-
-        display: none;
-
+        display: block;             /* was: display: none; */
         margin-top: 22px;
-
         font-size: 22px;
-
         line-height: 1.5;
-
         animation: fadeIn 0.8s ease-in-out;
+    }
 
+    .inline-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 14px auto 0 auto;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 24px;
     }
 
     @keyframes fadeIn {
-
         from { opacity: 0; transform: translateY(20px); }
-
         to { opacity: 1; transform: translateY(0); }
-
     }
 
     /* Floating Snow Animation */
-
     .snowflake {
-
         position: fixed;
-
         top: -10px;
-
         left: 50%;
-
         font-size: 18px;
-
         color: white;
-
         opacity: 0.8;
-
         animation: snow 10s linear infinite;
-
     }
 
     @keyframes snow {
-
         0% { transform: translateX(0) translateY(0); }
-
         100% { transform: translateX(-200px) translateY(100vh); }
-
     }
 </style>
 </head>
 <body>
 <h1>🎄 Season’s Greetings from Cognizant 🎄</h1>
 <h2>To our valued partner: <b>US Bank</b></h2>
+
 <div class="card">
-<button class="reveal-btn" onclick="reveal(1)">✨ Reveal Christmas Wishes</button>
-<div class="section" id="s1">
-
+    <!-- Christmas Wishes (formerly under button) -->
+    <div class="section" id="s1">
         🎁 <b>Warmest Christmas Greetings!</b><br>
-
         May your holiday season sparkle with joy,<br>
-
         peace, and beautiful moments with your loved ones.
 
-	<img src="Christmas.webp" alt="Christmas" class="inline-img">
-</div>
-<button class="reveal-btn" onclick="reveal(2)">🎆 Reveal New Year Message</button>
-<div class="section" id="s2">
+        <img src="Christmas.webp" alt="Christmas" class="inline-img">
+    </div>
 
+    <!-- New Year Message (formerly under button) -->
+    <div class="section" id="s2">
         🌟 <b>Happy New Year 2026!</b><br>
-
         Wishing US Bank a year filled with innovation,<br>
-
         success, and remarkable achievements.
+        <img src="Happy New year.webp" alt="Happy New year" class="inline-img">
+    </div>
 
-	<img src="Happy New year.webp" alt="Happy New year" class="inline-img">
-</div>
-<button class="reveal-btn" onclick="reveal(3)">💙 Reveal Special Appreciation Note</button>
-<div class="section" id="s3">
-
+    <!-- Special Appreciation Note (formerly under button) -->
+    <div class="section" id="s3">
         🤝 Thank you for your continued partnership and trust.<br>
-
         We look forward to reaching new milestones together.<br><br>
         — <b>Team Cognizant</b>
-	<img src="partnership.PNG" alt="Partnership" class="inline-img">
+        <img src="Partnership.png" alt="Partnership" class="inline-img">
+    </div>
 </div>
-</div>
-<script>
 
-function reveal(n) {
-
-    document.getElementById("s" + n).style.display = "block";
-
-}
-</script>
 <!-- Generate 40 Snowflakes -->
 <script>
-
 for (let i = 0; i < 40; i++) {
-
     let snow = document.createElement("div");
-
     snow.className = "snowflake";
-
     snow.innerHTML = "❄";
-
     snow.style.left = Math.random() * 100 + "vw";
-
     snow.style.fontSize = (Math.random() * 10 + 10) + "px";
-
     snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
-
     snow.style.opacity = Math.random();
-
     document.body.appendChild(snow);
-
 }
 </script>
 </body>
 </html>
-
-
- 
-
